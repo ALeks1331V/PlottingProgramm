@@ -1,0 +1,112 @@
+﻿<Window x:Class="PlottingProgramm.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PlottingProgramm"
+        mc:Ignorable="d"
+        xmlns:ScottPlot="clr-namespace:ScottPlot;assembly=ScottPlot.WPF"
+        Height="600" Width="1000"
+        AllowsTransparency="True"
+        
+        Background="#01ffffff"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None">
+    <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="#20242a" Opacity="0.55"/>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.ColumnSpan="2"
+                Background="#0e0c07"
+                MouseDown="BorderMouseDown">
+
+            <Grid HorizontalAlignment="Stretch">
+                <Label Content="Version 1.3 Alpha"
+                       VerticalAlignment="Center"
+                       FontSize="8"
+                       Foreground="Gray"/>
+                <StackPanel HorizontalAlignment="Right"
+                            Orientation="Horizontal">
+                    <Button Width="20"
+                            Content="—"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Foreground="Gray"
+                            FontWeight="Bold"
+                            Click="ButtonMinimizeClick"/>
+                    <Button Width="20"
+                            Content="✕"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Foreground="Gray"
+                            FontWeight="Bold"
+                            Click="ButtonShutDownClick"/>
+
+                </StackPanel>
+            </Grid>
+        </Border>
+        <TextBlock Grid.Row="1" Grid.Column="2"
+                   Text="Plotting Programm"
+                   Foreground="White"
+                   Width="Auto"
+                   Height="Auto"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="32"
+                   FontFamily="Kartika"/>
+        <StackPanel Grid.Row="1" Grid.Column="0" Grid.RowSpan="2"
+                        Background="#20242a"
+                        Opacity="0.85"
+                        Width="150">
+
+            <Border Style="{StaticResource LeftPanelButtonBorderStyle}"
+                    Margin="0,20,0,0">
+                <Button Content="Calculate"
+                            Click="pageCalculate"
+                            x:Name="calculatePage"
+                            Style="{StaticResource LeftPanelButtons}"/>
+            </Border>
+
+            <Border Style="{StaticResource LeftPanelButtonBorderStyle}">
+                <Button Content="How it works"
+                            Style="{StaticResource LeftPanelButtons}"
+                            Click="pageHowItWorksClick"
+                            x:Name="HowItWorks"/>
+            </Border>
+
+            <Border Style="{StaticResource LeftPanelButtonBorderStyle}">
+                <Button Content="My GitHub"
+                            Click="pageGitHub"
+                            x:Name="GitHub"
+                            Style="{StaticResource LeftPanelButtons}"/>
+            </Border>
+            
+            <Border Style="{StaticResource LeftPanelButtonBorderStyle}">
+                <Button Content="Settings"
+                            Click="pageSettingsClick"
+                            x:Name="Settings"
+                            Style="{StaticResource LeftPanelButtons}"/>
+            </Border>
+
+        </StackPanel>
+
+        <Frame Grid.Row="2" Grid.Column="1"
+               x:Name="ChangingFrame"
+               NavigationUIVisibility="Hidden">
+        </Frame>
+
+    </Grid>
+</Window>

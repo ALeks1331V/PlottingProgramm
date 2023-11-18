@@ -1,0 +1,18 @@
+﻿<Application x:Class="PlottingProgramm.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:PlottingProgramm"
+             StartupUri="View/MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="./View/Themes/LeftPanelButtons.xaml"/>
+                <ResourceDictionary Source="./View/Themes/ButtonBorderStyle.xaml"/>
+                <ResourceDictionary Source="./View/Themes/ComboboxStyle.xaml"/>
+                <ResourceDictionary Source="./View/Themes/ComboboxBorderStyle.xaml"/>
+                <ResourceDictionary Source="./View/Themes/ButtonsInCMBB.xaml"/>
+                <ResourceDictionary Source="./View/Themes/TextBoxInGraghSearchPage.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
